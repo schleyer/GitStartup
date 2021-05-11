@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{417DB407-9442-4038-80A9-FE80D5FCE6E0}</ProjectGuid>
+    <OutputName>STARTUP</OutputName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>STARTUP</RootNamespace>
+    <ProjectCopybookPaths>..\..\IOCOPY;..\..\copybooks;..\..\UCTCOPY</ProjectCopybookPaths>
+    <StartupObject>RWMAIN</StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <ProductVersion>1.0.0.0</ProductVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <OutputPath>..\..\DLL</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <MaxError>100</MaxError>
+    <ConfigurationCopybookPaths>
+    </ConfigurationCopybookPaths>
+    <PlatformTarget>x86</PlatformTarget>
+    <Pointer64>False</Pointer64>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateDirectivesFile>False</GenerateDirectivesFile>
+    <Verify>False</Verify>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <SourceFormat>Variable</SourceFormat>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>False</DebugSymbols>
+    <OutputPath>C:\TRANSAERO-SOURCE\TRANSSEND\Release</OutputPath>
+    <WarningLevel>2</WarningLevel>
+    <MaxError>100</MaxError>
+    <ConfigurationCopybookPaths>
+    </ConfigurationCopybookPaths>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Pointer64>False</Pointer64>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateDirectivesFile>False</GenerateDirectivesFile>
+    <Verify>False</Verify>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <SourceFormat>Variable</SourceFormat>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>True</DebugSymbols>
+    <OutputPath>.\bin\x64\Debug\</OutputPath>
+    <WarningLevel>1</WarningLevel>
+    <MaxError>100</MaxError>
+    <ConfigurationCopybookPaths>
+    </ConfigurationCopybookPaths>
+    <PlatformTarget>x64</PlatformTarget>
+    <Pointer64>True</Pointer64>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateDirectivesFile>False</GenerateDirectivesFile>
+    <Verify>False</Verify>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediatePath>.\obj\x64\Debug\</IntermediatePath>
+    <SourceFormat>Variable</SourceFormat>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugSymbols>False</DebugSymbols>
+    <OutputPath>C:\TRANSAERO-SOURCE\TRANSSEND\Release</OutputPath>
+    <WarningLevel>2</WarningLevel>
+    <MaxError>100</MaxError>
+    <IntermediatePath>.\obj\x64\Release\</IntermediatePath>
+    <PlatformTarget>x64</PlatformTarget>
+    <Pointer64>True</Pointer64>
+    <ConfigurationCopybookPaths>
+    </ConfigurationCopybookPaths>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateDirectivesFile>False</GenerateDirectivesFile>
+    <Verify>False</Verify>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <SourceFormat>Variable</SourceFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Net">
+      <Name>System.Net</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Text" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CBLSRC\RWMAIN.CBL">
+      <Link>RWMAIN.CBL</Link>
+    </Compile>
+    <Compile Include="..\..\CBLSRC\RWMENU.CBL">
+      <Link>RWMENU.CBL</Link>
+    </Compile>
+    <Compile Include="..\..\CBLSRC\STRTUP.CBL">
+      <Link>STRTUP.CBL</Link>
+    </Compile>
+    <Compile Include="..\..\SASRC\BATRPT.CBL">
+      <Link>BATRPT.CBL</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APPROJ\APPROJ.cblproj">
+      <Name>APPROJ</Name>
+      <Project>{6F145F5A-6832-4BC6-87C4-57A00E48D3A3}</Project>
+      <Package>{535C04D7-A2A5-47C7-83E0-B340A995CD1F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\ARPROJ\ARPROJ.cblproj">
+      <Name>ARPROJ</Name>
+      <Project>{3C3D407D-EA96-421F-B63C-121BE34B02E0}</Project>
+      <Package>{535C04D7-A2A5-47C7-83E0-B340A995CD1F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\CBLPROJ\CBLPROJ.cblproj">
+      <Name>CBLPROJ</Name>
+      <Project>{0F90F167-9333-47FA-A8A9-56270D7AA126}</Project>
+      <Package>{535C04D7-A2A5-47C7-83E0-B340A995CD1F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\IOPROJ\IOPROJ.cblproj">
+      <Name>IOPROJ</Name>
+      <Project>{EE0A15C7-D3F3-4E04-AED1-C454250EAE9D}</Project>
+      <Package>{535C04D7-A2A5-47C7-83E0-B340A995CD1F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\PIPROJ\PIPROJ.cblproj">
+      <Name>PIPROJ</Name>
+      <Project>{818A7A8A-B52D-4297-8DAD-A9902AD7111B}</Project>
+      <Package>{535C04D7-A2A5-47C7-83E0-B340A995CD1F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\UctScreen\UctScreen.cblproj">
+      <Name>UctScreen</Name>
+      <Project>{E14678E4-3EDD-4FBB-A457-71EFC4585E14}</Project>
+      <Package>{535C04D7-A2A5-47C7-83E0-B340A995CD1F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\VBroutines\VBroutines.vbproj">
+      <Name>VBroutines</Name>
+      <Project>{D8BEF181-8880-4E2E-81DF-161B114E480F}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Micro Focus\Visual COBOL\v1.0\MicroFocus.COBOL.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
